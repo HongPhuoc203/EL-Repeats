@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilingual Reader</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Bilingual Reader ✨</h1>
+        
+        <div class="input-group">
+            <label for="text-input">Text to read (English and Vietnamese on separate lines):</label>
+            <textarea id="text-input" placeholder="Example:&#10;Hello, how are you?&#10;Xin chào, bạn khỏe không?&#10;I am fine.&#10;Tôi khỏe."></textarea>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="en-voice-select">English Voice:</label>
+                <select id="en-voice-select"></select>
+            </div>
+
+            <div class="control-group" style="flex-wrap: wrap;">
+                <div style="display: flex; width: 100%; align-items: center; justify-content: space-between;">
+                    <label for="vi-voice-select">Vietnamese Voice:</label>
+                    <select id="vi-voice-select"></select>
+                </div>
+                <small id="vi-help" style="color: #f87171; margin-top: 0.75rem; display: none; width: 100%; font-size: 0.85rem; line-height: 1.4;">
+                    ⚠️ Không tìm thấy giọng Tiếng Việt trên máy bạn. Bạn có thể chọn tạm giọng khác ở trên, hoặc vào <b>Windows Settings > Time & Language > Speech</b> để cài thêm ngôn ngữ Tiếng Việt (Vietnamese).
+                </small>
+            </div>
+
+            <div class="control-group">
+                <label for="rate-select">Speed:</label>
+                <input type="range" id="rate-select" min="0.5" max="1.5" value="0.9" step="0.05">
+                <span id="rate-value">0.9</span>
+            </div>
+
+            <div class="control-group">
+                <label for="repeat-select">Repeat (times):</label>
+                <input type="range" id="repeat-select" min="1" max="20" value="1" step="1">
+                <span id="repeat-value">1</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="delay-select">Delay between repeats (s):</label>
+                <input type="range" id="delay-select" min="0" max="5" value="1.5" step="0.5">
+                <span id="delay-value">1.5s</span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="play-btn" class="primary">Play 🔊</button>
+            <button id="stop-btn" class="secondary">Stop ⏹️</button>
+        </div>
+        
+        <div id="status" class="status">Ready</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
